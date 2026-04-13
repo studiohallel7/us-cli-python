@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "us-cli"
+version = "0.1.0"
+description = "Qwen CLI portado para Python — soberania local, GGUF direto, sem telemetria"
+requires-python = ">=3.10"
+dependencies = [
+    "llama-cpp-python>=0.2.0",
+    "rich>=13.0",
+    "prompt-toolkit>=3.0",
+    "pyyaml>=6.0",
+    "numpy>=1.24",
+]
+
+[project.scripts]
+us = "us_cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
