@@ -25,7 +25,7 @@ class Tool:
         self.name = name
         self.description = description
         self.parameters = parameters
-        self.execute_fn = execute
+        self.execute = execute
 
     def to_openai_schema(self) -> dict:
         """Converte para formato OpenAI function calling."""
@@ -62,7 +62,7 @@ def create_tool_registry() -> dict[str, Tool]:
             },
             "required": ["file_path"],
         },
-        execute_fn=_read_file,
+        execute=_read_file,
     )
 
     # ---- write_file ----
@@ -77,7 +77,7 @@ def create_tool_registry() -> dict[str, Tool]:
             },
             "required": ["file_path", "content"],
         },
-        execute_fn=_write_file,
+        execute=_write_file,
     )
 
     # ---- edit ----
@@ -94,7 +94,7 @@ def create_tool_registry() -> dict[str, Tool]:
             },
             "required": ["file_path", "old_string", "new_string"],
         },
-        execute_fn=_edit,
+        execute=_edit,
     )
 
     # ---- run_shell_command ----
@@ -110,7 +110,7 @@ def create_tool_registry() -> dict[str, Tool]:
             },
             "required": ["command"],
         },
-        execute_fn=_run_shell_command,
+        execute=_run_shell_command,
     )
 
     # ---- glob ----
@@ -125,7 +125,7 @@ def create_tool_registry() -> dict[str, Tool]:
             },
             "required": ["pattern"],
         },
-        execute_fn=_glob,
+        execute=_glob,
     )
 
     # ---- grep ----
@@ -142,7 +142,7 @@ def create_tool_registry() -> dict[str, Tool]:
             },
             "required": ["pattern"],
         },
-        execute_fn=_grep,
+        execute=_grep,
     )
 
     # ---- todo_write ----
@@ -168,7 +168,7 @@ def create_tool_registry() -> dict[str, Tool]:
             },
             "required": ["todos"],
         },
-        execute_fn=_todo_write,
+        execute=_todo_write,
     )
 
     # ---- save_memory ----
@@ -183,7 +183,7 @@ def create_tool_registry() -> dict[str, Tool]:
             },
             "required": ["fact"],
         },
-        execute_fn=_save_memory,
+        execute=_save_memory,
     )
 
     # ---- list_directory ----
@@ -197,7 +197,7 @@ def create_tool_registry() -> dict[str, Tool]:
             },
             "required": ["path"],
         },
-        execute_fn=_list_directory,
+        execute=_list_directory,
     )
 
     return tools

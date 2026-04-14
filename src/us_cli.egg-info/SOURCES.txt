@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/us_cli/__init__.py
+src/us_cli/config.py
+src/us_cli/llm.py
+src/us_cli/loop.py
+src/us_cli/main.py
+src/us_cli/memory.py
+src/us_cli/prompt.py
+src/us_cli.egg-info/PKG-INFO
+src/us_cli.egg-info/SOURCES.txt
+src/us_cli.egg-info/dependency_links.txt
+src/us_cli.egg-info/entry_points.txt
+src/us_cli.egg-info/requires.txt
+src/us_cli.egg-info/top_level.txt
+src/us_cli/tools/registry.py

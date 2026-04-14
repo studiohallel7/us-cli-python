@@ -1,0 +1,2 @@
+[console_scripts]
+us = us_cli.main:main
